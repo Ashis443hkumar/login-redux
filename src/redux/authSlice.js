@@ -8,7 +8,7 @@ let initialState ={
 }
 
 
-const loginUser = createAsyncThunk("user", async(body)=>{
+ export const loginUser = createAsyncThunk("user", async(body)=>{
   let res = await fetch("" , {
     method: "post",
     headers:{
