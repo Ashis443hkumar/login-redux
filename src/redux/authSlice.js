@@ -17,7 +17,7 @@ let initialState ={
     },
     body:JSON.stringify(body)
   })
-  return  await res.json()
+    return await res.json()
 })
 
 
@@ -36,14 +36,14 @@ const authSlice = createSlice({
      [loginUser.pending]: (state,action) =>{
        state.loading = true
      },
-     [loginUser.pending]: (state, {payload:{user, token}}) =>{
+     [loginUser.fulfilled]: (state, {payload:{user, token}}) =>{
       state.loading = true
       state.user = user,
       state.token = token,
       localStorage.setItem("token", JSON.stringify(token))
       localStorage.setItem("user", JSON.stringify(user))
     },
-    [loginUser.pending]: (state,action) =>{
+    [loginUser.rejected]: (state,action) =>{
       state.loading = true
     }
    }
