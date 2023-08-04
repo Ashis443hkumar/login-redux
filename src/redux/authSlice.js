@@ -13,11 +13,11 @@ let initialState ={
     method: "post",
     headers:{
       "Content-Type" : "application/json",
-      authrization: localStorage.getItem("token")
+      authorization: localStorage.getItem("token")
     },
     body:JSON.stringify(body)
   })
-  return  await res.JSON
+  return  await res.json()
 })
 
 
